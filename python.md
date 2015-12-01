@@ -1,4 +1,4 @@
-# Python
+# Python tips
 ## 無限に入れ子になってるdefaultdict
 ```python
 # from http://d.hatena.ne.jp/cheeseshop/20091226
