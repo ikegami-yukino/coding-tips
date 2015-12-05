@@ -24,8 +24,20 @@ import hmac
 #=> 10000 loops, best of 3: 14.3 µs per loop
 
 import hashlib
+%timeit int(hashlib.sha512("ファンタジスタドール").hexdigest(), 16)
+#=> 100000 loops, best of 3: 2.77 µs per loop
+
+%timeit int(hashlib.sha384("ファンタジスタドール").hexdigest(), 16)
+#=> 100000 loops, best of 3: 2.67 µs per loop
+
 %timeit int(hashlib.sha256("ファンタジスタドール").hexdigest(), 16)
 #=> 100000 loops, best of 3: 2.45 µs per loop
+
+%timeit int(hashlib.sha224("ファンタジスタドール").hexdigest(), 16)
+#=> 100000 loops, best of 3: 2.36 µs per loop
+
+%timeit int(hashlib.sha1("ファンタジスタドール").hexdigest(), 16)
+#=> 100000 loops, best of 3: 2.08 µs per loop
 
 %timeit int(hashlib.md5("ファンタジスタドール").hexdigest(), 16)
 #=> 100000 loops, best of 3: 2.06 µs per loop
