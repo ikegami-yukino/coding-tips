@@ -1,4 +1,11 @@
 # Python tips
+## listの順番を保持しながら重複を除去
+```python
+>>> x = [3, 2, 1, 1]
+>>> sorted(set(x), key=x.index)
+[3, 2, 1]
+```
+
 ## 無限に入れ子になってるdefaultdict
 ```python
 # from http://d.hatena.ne.jp/cheeseshop/20091226
