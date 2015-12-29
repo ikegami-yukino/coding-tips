@@ -66,4 +66,8 @@ import mmh3
 HIRAGANA = [chr(i) for i in range(12353, 12353+86)]  # ぁ-ゖ
 KATAKANA = [chr(i) for i in range(12449, 12449+90)]  # ァ-ヺ
 KANJI = [chr(i) for i in range(19968, 19968+20935)]  # 一-鿆
+UPPER_ALPHA = [chr(i) for i in range(65, 91)]  # A-Z
+LOWER_ALPHA = [chr(i) for i in range(97, 123)]  # a-z
+DIGITS = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+ASCII = [chr(i) for i in range(128)]  # [NUL]-[DEL]
 ```
