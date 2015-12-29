@@ -60,3 +60,10 @@ import mmh3
 - builtinの`hash`関数は最速だが、永続性が必要なものには向いてない (`PYTHONHASHSEED`環境変数を設定したPython3以外の環境では値が変わってしまうことがある)
 - `mmh3`も早いがインストールが必要
 - `hashlib.md5`はインストール不要で値が固定なものの中では一番早い
+
+## 文字種ごとのリスト
+```python
+HIRAGANA = [chr(i) for i in range(12353, 12353+86)]  # ぁ-ゖ
+KATAKANA = [chr(i) for i in range(12449, 12449+90)]  # ァ-ヺ
+KANJI = [chr(i) for i in range(19968, 19968+20935)]  # 一-鿆
+```
