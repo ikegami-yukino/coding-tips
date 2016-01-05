@@ -71,3 +71,12 @@ LOWER_ALPHA = [chr(i) for i in range(97, 123)]  # a-z
 DIGITS = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 ASCII = [chr(i) for i in range(128)]  # [NUL]-[DEL]
 ```
+
+## HTML Entityを元の文字に戻す
+
+```python
+from xml.sax import saxutils
+s = '&lt;foo&gt;bar&lt;/foo&gt;'
+saxutils.unescape(s)
+#=>'<foo>bar</foo>'
+```
