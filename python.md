@@ -81,6 +81,16 @@ saxutils.unescape(s)
 #=>'<foo>bar</foo>'
 ```
 
+## n-gram
+
+```python
+def to_ngrams(item, max_n):
+    return [to_ngram(item, n) for n in range(2, max_n + 1)]
+
+def to_ngram(item, n):
+    return [item[i:i+n] for i in range(len(item)-n+1)]
+```
+
 ## 2ちゃんねるまとめサイト検出用正規表現
 
 2014/01/08(水) 12:30:37.67 ID:+pyxCrmX0みたいなやつにマッチする
