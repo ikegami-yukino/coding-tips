@@ -23,6 +23,22 @@ perl -ne '$i++; print unless ($i % 1000)' < input.txt
 ```
 from https://web.archive.org/web/20120419132910/http://d.hatena.ne.jp/nokuno/20120121/1327139192
 
+### タブ区切りのフィールドを指定して取り出す
+```
+$ cut -f 3 < input.txt
+$ cut -f 3,4 < input.xt
+```
+ただし，フィールドを入れ替えることはできないので，その場合はawkを使うことになります．
+```
+$ awk '{print $3, $2;}'
+```
+awkだとデフォルトがスペース区切りなので，入力をタブ区切りにするにはsortと同じように$'\t'を区切り文字に指定し，出力をタブ区切りにするにはOFS="\t"を指定する必要があります．ちょっと面倒ですが…
+```
+$ awk -F $'\t' '{OFS="\t"; print $3, $2;}'
+```
+cutコマンドの逆で行数が同じ複数のファイルを列結合（SQLでいうJOIN）するには，pasteコマンドが使えます．
+
+from https://web.archive.org/web/20120419132910/http://d.hatena.ne.jp/nokuno/20120121/1327139192
 
 ## その他
 ### コマンドを時刻付きで1行ずつ出力&保存
