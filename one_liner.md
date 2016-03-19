@@ -45,6 +45,10 @@ from https://web.archive.org/web/20120419132910/http://d.hatena.ne.jp/nokuno/201
 ```sh
 何かコマンド | awk '{ print strftime("[%Y/%m/%d %H:%M:%S]"), $0 } { fflush() }'|tee 保存先
 ```
+### MeCab辞書のソート
+```sh
+LC_ALL=C ls *.csv |xargs -I{} sort -o {} -u -n -k 2 -t , {}
+```
 
 ## Link
 - [日本語の自然言語処理には Perl も便利 - アスペ日記](http://d.hatena.ne.jp/takeda25/20110823/1314105549)
