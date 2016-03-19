@@ -80,3 +80,12 @@ s = '&lt;foo&gt;bar&lt;/foo&gt;'
 saxutils.unescape(s)
 #=>'<foo>bar</foo>'
 ```
+
+## 2ちゃんねるまとめサイト検出用正規表現
+
+2014/01/08(水) 12:30:37.67 ID:+pyxCrmX0みたいなやつにマッチする
+
+```python
+import re
+re_2ch_post = re.compile(u'[^2]2[0-9]{3}/\d{2}/\d{2}\(.\) \d{2}:\d{2}:\d{2}\.\d{2} ID:[\w\d\+\/]+')
+```
