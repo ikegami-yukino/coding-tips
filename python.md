@@ -91,6 +91,16 @@ def to_ngram(item, n):
     return [item[i:i+n] for i in range(len(item)-n+1)]
 ```
 
+# 文字列の類似度
+
+```python
+import difflib
+a = u”スパゲッティ”
+b = u”スパゲティー”
+print(difflib.SequenceMatcher(None, a, b).ratio())
+```
+from http://tt-house.com/2010/04/python-sequencematcher.html
+
 ## パイプからの入力を受け取る
 
 ```python
