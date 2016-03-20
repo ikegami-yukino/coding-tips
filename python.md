@@ -91,6 +91,15 @@ def to_ngram(item, n):
     return [item[i:i+n] for i in range(len(item)-n+1)]
 ```
 
+## パイプからの入力を受け取る
+
+```python
+import sys
+
+for x in sys.stdin:
+    sys.stdout.write(x)
+```
+
 ## 2ちゃんねるまとめサイト検出用正規表現
 
 2014/01/08(水) 12:30:37.67 ID:+pyxCrmX0みたいなやつにマッチする
