@@ -38,6 +38,15 @@ from http://zx.jpn.org/b/20081025/155/vim/vim-mluti-file-replace
 
 
 ## その他
+### インデントの整形
+```vim
+gg=G
+```
+### 一括コメントアウト
+```vim
+行頭を範囲選択して I#<ESC>
+```
+
 ### 重複除去&ソート
 ```vim
 :sort u
