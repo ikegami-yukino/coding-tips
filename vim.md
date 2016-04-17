@@ -16,6 +16,11 @@
 :g/hoge/d
 ```
 
+### HTMLタグ除去
+```vim
+:%s/<.\{-}>//g
+```
+
 ## 複数ファイルを一括置換
 from http://zx.jpn.org/b/20081025/155/vim/vim-mluti-file-replace
 
