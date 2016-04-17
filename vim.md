@@ -60,3 +60,9 @@ gg=G
 ### 大文字/小文字変換
 
 ヴィジュアルモードで `u` で小文字、 `U` で大文字になる。
+
+### アメブロ本文抽出
+```vim
+:%s/\_.*<!-- google_ad_section_start -->//g
+:%s/<!-- google_ad_section_end -->\_.*//g
+```
