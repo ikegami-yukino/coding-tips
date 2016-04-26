@@ -6,6 +6,11 @@
 find /tmp/text -name "*.txt" -print0 | xargs -0 -I % cat %  >> /tmp/hoge.txt
 ```
 
+### 再帰的に文字コード変換
+```sh
+find . -type f -exec sh -c "iconv -f eucjp -t UTF-8 {} > {}.utf8"  \; -exec mv "{}".utf8 "{}" \;
+```
+
 ### word count
 ```sh
 cat hoge.txt | mecab | grep 名詞 | awk '{print $1}' | sort | uniq -c| sort -n -r
