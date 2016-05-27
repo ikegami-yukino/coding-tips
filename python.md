@@ -80,6 +80,14 @@ s = '&lt;foo&gt;bar&lt;/foo&gt;'
 saxutils.unescape(s)
 #=>'<foo>bar</foo>'
 ```
+あるいは
+
+```python
+from HTMLParser import HTMLParser
+s = '&lt;foo&gt;bar&lt;/foo&gt;'
+HTMLParser().unescape(s)
+#=>'<foo>bar</foo>'
+```
 
 ## n-gram
 
