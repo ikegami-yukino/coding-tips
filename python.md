@@ -24,6 +24,14 @@ word_ids = defaultdict(lambda: len(word_ids))
 ```
 単語を単語IDにマッピングする辞書
 
+## メモリ使用量
+```python
+import subprocess
+import os
+
+subprocess.check_output(["ps", "up", str(os.getpid())]).decode('utf8').split()[16]
+```
+
 ## 文字列hashingの比較
 ```python
 import hmac
@@ -99,7 +107,7 @@ def to_ngram(item, n):
     return [item[i:i+n] for i in range(len(item)-n+1)]
 ```
 
-# 文字列の類似度
+## 文字列の類似度
 
 ```python
 import difflib
