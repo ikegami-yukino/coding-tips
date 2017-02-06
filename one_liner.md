@@ -15,6 +15,11 @@ find . -type f -exec sh -c "iconv -f eucjp -t UTF-8 {} > {}.utf8"  \; -exec mv "
 perl -ne 's/foo//g; print' < foobar.txt
 ```
 
+### 指定行を削除
+```perl
+perl -ne '$i++; print if ($i != 1)' < foobar.txt
+```
+
 ### word count
 ```sh
 cat hoge.txt | mecab | grep 名詞 | awk '{print $1}' | sort | uniq -c| sort -n -r
