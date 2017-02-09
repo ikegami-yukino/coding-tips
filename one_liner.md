@@ -59,6 +59,19 @@ cutコマンドの逆で行数が同じ複数のファイルを列結合（SQL�
 
 from https://web.archive.org/web/20120419132910/http://d.hatena.ne.jp/nokuno/20120121/1327139192
 
+## ハードウェア情報
+### CPU
+sudo lshw -short -class processor
+
+### 最大Memory
+cat /proc/meminfo | grep MemTotal
+
+### HDD/SSDの使用率
+df -h
+
+### GPUメモリの使用率
+nvidia-smi -l
+
 ## その他
 ### コマンドを時刻付きで1行ずつ出力&保存
 ```sh
