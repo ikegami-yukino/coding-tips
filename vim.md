@@ -66,6 +66,10 @@ gg=G
 
 ヴィジュアルモードで `u` で小文字、 `U` で大文字になる。
 
+### :set expandtab設定時にタブ文字を挿入
+
+Control-v Tab
+
 ### アメブロ本文抽出
 ```vim
 :%s/\_.*<!-- google_ad_section_start -->//g
