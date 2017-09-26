@@ -83,17 +83,9 @@ ASCII = [chr(i) for i in range(128)]  # [NUL]-[DEL]
 ## HTML Entityを元の文字に戻す
 
 ```python
-from xml.sax import saxutils
+import html
 s = '&lt;foo&gt;bar&lt;/foo&gt;'
-saxutils.unescape(s)
-#=>'<foo>bar</foo>'
-```
-あるいは
-
-```python
-from HTMLParser import HTMLParser
-s = '&lt;foo&gt;bar&lt;/foo&gt;'
-HTMLParser().unescape(s)
+html.unescape(s)
 #=>'<foo>bar</foo>'
 ```
 
