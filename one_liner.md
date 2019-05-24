@@ -64,6 +64,12 @@ cutコマンドの逆で行数が同じ複数のファイルを列結合（SQL�
 
 from https://web.archive.org/web/20120419132910/http://d.hatena.ne.jp/nokuno/20120121/1327139192
 
+### 漢字混じりテキストの読みの文字数をカウント
+
+```
+echo 漢字混じりテキスト | mecab -d `mecab-config --dicdir`/mecab-ipadic-neologd -O yomi | wc -m
+```
+
 ## ハードウェア情報
 ### CPU
 ```
