@@ -87,6 +87,20 @@ df -h
 ```
 nvidia-smi -l
 ```
+## Python ライブラリの情報
+### numpy
+```
+python -c 'import numpy as np; np.show_config()'
+```
+### TensorFlow
+```
+python -c 'from tensorflow.python.client import device_lib; print(device_lib.list_local_devices())'
+```
+### Chainer
+```
+python -c 'import chainer; chainer.print_runtime_info()'
+```
+
 ## その他
 ### コマンドを時刻付きで1行ずつ出力&保存
 ```sh
