@@ -15,6 +15,11 @@ find . -type f -exec sh -c "iconv -f eucjp -t UTF-8 {} > {}.utf8"  \; -exec mv "
 perl -ne 's/foo//g; print' < foobar.txt
 ```
 
+### TSVをCSVに変換
+```sh
+cat example.tsv | tr "\t" "," > example.csv
+```
+
 ### 空行の削除
 ```perl
 perl -i -ne '/^\s*$/ or print' foobar.txt
