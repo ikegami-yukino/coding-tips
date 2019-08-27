@@ -28,7 +28,7 @@ from http://zx.jpn.org/b/20081025/155/vim/vim-mluti-file-replace
 ```vim
 :args *.c
 ```
-フォルダー内も対象とるする場合は
+フォルダー内も対象とする場合は
 ```vim
 :args **/*.c
 ```
