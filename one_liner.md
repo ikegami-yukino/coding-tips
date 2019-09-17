@@ -76,11 +76,16 @@ echo 漢字混じりテキスト | mecab -d `mecab-config --dicdir`/mecab-ipadic
 ```
 
 ## ハードウェア情報
-### CPU
+### Mac
+```
+system_profiler SPHardwareDataType
+```
+### Ubuntu
+#### CPU
 ```
 sudo lshw -short -class processor
 ```
-### 最大Memory
+#### 最大Memory
 ```
 cat /proc/meminfo | grep MemTotal
 ```
