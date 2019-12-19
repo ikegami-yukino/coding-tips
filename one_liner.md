@@ -30,6 +30,11 @@ perl -i -ne '/^\s*$/ or print' foobar.txt
 perl -ne '$i++; print if ($i != 1)' < foobar.txt
 ```
 
+### 重複行の削除
+```perl
+perl -ne 'print if !$a{$_}++' < foobar.txt
+```
+
 ### word count
 ```sh
 cat hoge.txt | mecab | grep 名詞 | awk '{print $1}' | sort | uniq -c| sort -n -r
