@@ -1,5 +1,7 @@
 # One-liner
 
+主にPerlワンライナーについて書きます。
+
 ## テキスト処理
 ### ディレクトリ以下のファイルを結合
 ```sh
@@ -34,6 +36,12 @@ perl -ne '$i++; print if ($i != 1)' < foobar.txt
 ```perl
 perl -ne 'print if !$a{$_}++' < foobar.txt
 ```
+
+### 指定した文字列を抽出
+```perl
+perl -ne '/@[a-zA-Z0-9_\-]+/; print $&'
+```
+ただし改行なしに結果が出力されるので注意。
 
 ### word count
 ```sh
