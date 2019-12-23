@@ -62,6 +62,11 @@ gg=G
 :sort u
 ```
 
+### 文字数カウント
+```vim
+g Ctrl-g
+```
+
 ### nkfで全角英数字を半角に
 ```vim
 :%!nkf -m0Z1 -W -w
