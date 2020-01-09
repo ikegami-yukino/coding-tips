@@ -39,9 +39,8 @@ perl -ne 'print if !$a{$_}++' < foobar.txt
 
 ### 指定した文字列を抽出
 ```perl
-perl -ne '/@[a-zA-Z0-9_\-]+/; print $&'
+perl -ne '/@[a-zA-Z0-9_\-]+/; print $& . "\n"'
 ```
-ただし改行なしに結果が出力されるので注意。
 
 ### word count
 ```sh
