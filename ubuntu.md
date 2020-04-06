@@ -1,5 +1,10 @@
 # Ubuntu
 
+## Ubuntuのバージョンとかを表示
+```bash
+cat /etc/os-release
+```
+
 ## コマンドのバージョンの切り替え
 ```
 sudo update-alternatives --install /usr/bin/python python /usr/bin/python2.7 2
