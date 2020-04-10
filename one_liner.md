@@ -124,9 +124,21 @@ python -c "import chainer; chainer.print_runtime_info()"
 ```
 
 ## その他
-### コマンドを時刻付きで1行ずつ出力&保存
+### コマンド実行結果を時刻付きで1行ずつ出力&保存
 ```sh
 何かコマンド | awk '{ print strftime("[%Y/%m/%d %H:%M:%S]"), $0 } { fflush() }'|tee 保存先
+```
+### ファイル単位でパッチを作る
+```sh
+diff -up
+```
+### ディレクトリ単位でパッチを作る
+```sh
+diff -uprN
+```
+### パッチをあてる
+```sh
+patch target_file < patch_file
 ```
 ### MeCab辞書のソート
 ```sh
