@@ -118,6 +118,10 @@ python -c "import numpy as np; np.show_config()"
 ```
 python -c "from tensorflow.python.client import device_lib; print(device_lib.list_local_devices())"
 ```
+
+もしもTensorFlowがGPUを認識しなかったら下記URL参照
+https://www.tensorflow.org/install/gpu?hl=ja
+
 ### Chainer
 ```
 python -c "import chainer; chainer.print_runtime_info()"
