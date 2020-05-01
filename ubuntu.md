@@ -7,6 +7,7 @@ cat /etc/os-release
 
 ## セキュリティアップデートだけする
 ```
+sudo apt install unattended-upgrades
 sudo unattended-upgrades
 ```
 
