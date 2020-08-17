@@ -141,6 +141,10 @@ patch target_file < patch_file
 ```
 
 ## その他
+### プロセス名の部分文字列からpidを取得
+```sh
+ps aux | grep "server.py" | grep -v "grep" | awk '{print $2}'
+```
 ### コマンド実行結果を時刻付きで1行ずつ出力&保存
 ```sh
 何かコマンド | awk '{ print strftime("[%Y/%m/%d %H:%M:%S]"), $0 } { fflush() }'|tee 保存先
