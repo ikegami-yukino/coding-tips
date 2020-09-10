@@ -71,14 +71,29 @@ import mmh3
 
 ## 文字種ごとのリスト
 ```python
+import string
+
 HIRAGANA = [chr(i) for i in range(12353, 12353+86)]  # ぁ-ゖ
 KATAKANA = [chr(i) for i in range(12449, 12449+90)]  # ァ-ヺ
 KANJI = [chr(i) for i in range(19968, 19968+20935)]  # 一-鿆
-UPPER_ALPHA = [chr(i) for i in range(65, 91)]  # A-Z
-LOWER_ALPHA = [chr(i) for i in range(97, 123)]  # a-z
-DIGITS = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+list(string.ascii_lowercase)  # abcdefghijklmnopqrstuvwxyz
+list(string.ascii_uppercase)  # ABCDEFGHIJKLMNOPQRSTUVWXYZ
+list(string.ascii_letters)  # string.ascii_lowercase + string.ascii_uppercase (i.e.) abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ
+
+list(string.digits)  # 0123456789
 KANJI_OLD_DIGITS = ["零", "壱", "弐", "参", "肆", "伍", "陸", "漆", "捌", "玖"]
-ASCII = [chr(i) for i in range(128)]  # [NUL]-[DEL]
+
+list(string.octdigits)  # Characters used in octal representation: 01234567
+list(string.hexdigits)  # Characters used in hex representation: 0123456789abcdefABCDEF
+
+list(string.punctuation)  # !"#$%&'()*+,-./:;<=>?@[\]^_`{|}~
+
+list(string.whitespace)  # space + TAB + line endings (Mac: ¥r, Unix: ¥n, and DOS: ¥r¥n)
+
+list(string.printable)  # string.ascii_letters + string.ascii_letters + string.punctuation + string.whitespace
+PRINTABLE_ASCII_WITHOUT_TAB_AND_LINE_ENDINGS = list(string.digits + string.ascii_letters + string.punctuation + " ")
+ALL_ASCII = [chr(i) for i in range(128)]  # [NUL]-[DEL]
 ```
 
 ## HTML Entityを元の文字に戻す
