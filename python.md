@@ -125,13 +125,13 @@ print(difflib.SequenceMatcher(None, a, b).ratio())
 ```
 from http://tt-house.com/2010/04/python-sequencematcher.html
 
-## パイプからの入力を受け取る
+## パイプからの標準入力を受け取る
 
 ```python
 import sys
 
 for x in sys.stdin:
-    sys.stdout.write(x)
+    sys.stdout.write(x)  # とりあえず確認用にパイプから受け取った文字列を標準出力してみる
 ```
 
 ## 2ちゃんねるまとめサイト検出用正規表現
