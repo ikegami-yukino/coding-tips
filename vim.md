@@ -7,6 +7,7 @@
 ```vim
 :%s/\v<pattern>//g
 ```
+
 ### 検索した後は置換する時にパターンを書かなくていい
 ```vim
 /abcd
@@ -20,29 +21,47 @@
 :%s/\zsあいうえお\ze.*検索に含める文字列/アイウエオ/g
 ```
 
-### 空行を除去
-```vim
-:%s/^\n$//g
-```
-
-### パターンにマッチした数を表示する
-```vim
-:%s/<pattern>//gn
-```
-
-### URLを除去
-```vim
-:%s/https\?:\/\/[a-z\.A-Z0-9\/\-_:&\?#=]\{2,\}//g
-```
-
-### 行ごと削除
+### 除去
+#### パターンにマッチした行を除去
 ```vim
 :g/hoge/d
 ```
 
-### HTMLタグ除去
+#### 空行を除去
+```vim
+:%s/^\n$//g
+```
+
+#### ひらがなを除去
+```vim
+:%s/\v[ぁ-ゖ]//g
+```
+
+#### カタカナを除去
+```vim
+:%s/\v[ァ-ヺ]\n//g
+```
+
+#### URLを除去
+```vim
+:%s/https\?:\/\/[a-z\.A-Z0-9\/\-_:&\?#=]\{2,\}//g
+```
+
+#### HTMLタグ除去
 ```vim
 :%s/<.\{-}>//g
+```
+
+#### HTMLファイル内の広告部分を除去
+```vim
+:%s/\_.*<!-- google_ad_section_start -->//g
+:%s/<!-- google_ad_section_end -->\_.*//g
+```
+
+
+### パターンにマッチした数を表示する
+```vim
+:%s/<pattern>//gn
 ```
 
 ## 複数ファイルを一括置換
@@ -52,7 +71,7 @@ from http://zx.jpn.org/b/20081025/155/vim/vim-mluti-file-replace
 ```vim
 :args *.c
 ```
-フォルダー内も対象とする場合は
+もしフォルダー内も対象とする場合は
 ```vim
 :args **/*.c
 ```
@@ -60,7 +79,7 @@ from http://zx.jpn.org/b/20081025/155/vim/vim-mluti-file-replace
 ```vim
 :args
 ```
-そんでもって変換は
+そして変換は
 ```vim
 :argdo %s/hoge/fuga/g | update
 ```
@@ -71,6 +90,7 @@ from http://zx.jpn.org/b/20081025/155/vim/vim-mluti-file-replace
 ```vim
 gg=G
 ```
+
 ### 一括コメントアウト
 ```vim
 行頭を範囲選択して I#<ESC>
@@ -98,9 +118,3 @@ g Ctrl-g
 ### :set expandtab設定時にタブ文字を挿入
 
 Control-v Tab
-
-### アメブロ本文抽出
-```vim
-:%s/\_.*<!-- google_ad_section_start -->//g
-:%s/<!-- google_ad_section_end -->\_.*//g
-```
