@@ -9,9 +9,13 @@ find /tmp/text -name "*.txt" -print0 | xargs -0 -I % cat %  >> /tmp/hoge.txt
 ```
 
 ### 再帰的に文字コード変換
+
+ディレクトリ内のファイルを全てutf-8にする例
+
 ```sh
-find . -type f -exec sh -c "iconv -f eucjp -t UTF-8 {} > {}.utf8"  \; -exec mv "{}".utf8 "{}" \;
+find . -type f -exec sh -c "nkf -w --overwrite {}" \;
 ```
+
 ### 置換
 ```perl
 perl -ne 's/foo//g; print' < foobar.txt
